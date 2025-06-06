@@ -17,11 +17,8 @@
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '294643549684918');
     fbq('track', 'PageView');
-    
-    // Fire conversion event after 1 second delay to ensure pixel loads
-    setTimeout(function() {
-        fbq('track', 'CompleteRegistration');
-    }, 1000);
+    fbq('track', 'ViewContent');
+
     </script>
     <noscript>
     <img height="1" width="1" style="display:none"
