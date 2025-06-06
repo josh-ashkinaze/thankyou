@@ -21,7 +21,6 @@
     // Fire conversion event after 1 second delay to ensure pixel loads
     setTimeout(function() {
         fbq('track', 'CompleteRegistration');
-        console.log('Meta Pixel CompleteRegistration event fired');
     }, 1000);
     </script>
     <noscript>
@@ -71,48 +70,22 @@
             50% { transform: scale(1.1); }
             100% { transform: scale(1); }
         }
-        .debug-info {
-            background: #f8f9fa;
-            border: 1px solid #dee2e6;
+        .completion-info {
+            background: #e8f4fd;
+            border: 1px solid #bee5eb;
             border-radius: 8px;
             padding: 15px;
             margin-top: 30px;
-            font-family: monospace;
             font-size: 0.9em;
-            text-align: left;
-        }
-        .status {
-            margin-top: 20px;
-            padding: 10px;
-            border-radius: 5px;
-            background: #d4edda;
-            border: 1px solid #c3e6cb;
-            color: #155724;
+            color: #0c5460;
         }
     </style>
     
     <script>
     // Additional verification script
     window.addEventListener('load', function() {
-        // Check if fbq is loaded
-        if (typeof fbq !== 'undefined') {
-            document.getElementById('pixel-status').innerHTML = '✅ Meta Pixel Successfully Loaded';
-            document.getElementById('pixel-status').style.background = '#d4edda';
-            
-            // Fire additional events for testing
-            setTimeout(function() {
-                fbq('track', 'Lead');
-                console.log('Meta Pixel Lead event fired');
-            }, 2000);
-            
-        } else {
-            document.getElementById('pixel-status').innerHTML = '❌ Meta Pixel Failed to Load';
-            document.getElementById('pixel-status').style.background = '#f8d7da';
-            document.getElementById('pixel-status').style.color = '#721c24';
-        }
-        
         // Show current timestamp
-        document.getElementById('timestamp').innerHTML = 'Page loaded at: ' + new Date().toLocaleString();
+        document.getElementById('timestamp').innerHTML = 'Completed at: ' + new Date().toLocaleString();
     });
     </script>
 </head>
@@ -124,14 +97,8 @@
         <p>Thank you for taking the time to provide your valuable feedback. Your responses have been recorded and will help us improve our services.</p>
         <p>You may now close this window or tab.</p>
         
-        <div id="pixel-status" class="status">
-            🔄 Checking Meta Pixel Status...
-        </div>
-        
-        <div class="debug-info">
-            <strong>Debug Information:</strong><br>
-            Pixel ID: 294643549684918<br>
-            Events Fired: PageView, CompleteRegistration, Lead<br>
+        <div class="completion-info">
+            <strong>Survey Reference:</strong> #SRV-2025-001<br>
             <span id="timestamp"></span>
         </div>
     </div>
