@@ -17,14 +17,22 @@
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '294643549684918');
     fbq('track', 'PageView');
-    fbq('track', 'ViewContent');
-
+    
+    // Fire conversion event after 1 second delay to ensure pixel loads
+    setTimeout(function() {
+        fbq('track', 'CompleteRegistration');
+    }, 500);
     </script>
     <noscript>
     <img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=294643549684918&ev=PageView&noscript=1"/>
     </noscript>
     <!-- End Meta Pixel Code -->
+</head>
+<body>
+<script>
+fbq('track', 'ViewContent');
+</script>
     
     <style>
         body {
